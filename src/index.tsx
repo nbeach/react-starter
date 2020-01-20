@@ -1,7 +1,5 @@
 import React from "react"
 import ReactDOM from "react-dom"
-import "bootstrap"
-import "core-js"
 
 import "./style/index.scss"
 import {initializeStore} from "./store/store"

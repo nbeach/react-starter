@@ -4,8 +4,9 @@ import {createAppState} from "../../util/test/factory/createAppState"
 import {GreetingContainer} from "./GreetingContainer"
 import {GreetingTestHandles} from "../presentation/Greeting"
 import {resetName} from "../../model/action/ResetNameAction"
+import {expect} from "chai"
 
-describe(GreetingContainer.name, () => {
+describe("GreetingContainer", () => {
 
     describe("when the name is clicked", () => {
 
@@ -13,7 +14,7 @@ describe(GreetingContainer.name, () => {
             const {mockStore, rootElement} = renderComponentWithState(GreetingContainer, createAppState())
             trigger(queryByTestHandle(GreetingTestHandles.Message, rootElement), "click")
 
-            expect(mockStore.getActions()).toEqual([resetName({})])
+            expect(mockStore.getActions()).to.eql([resetName({})])
         })
 
     })

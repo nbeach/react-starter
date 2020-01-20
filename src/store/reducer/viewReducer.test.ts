@@ -2,6 +2,7 @@ import {viewReducer} from "./viewReducer"
 import {createViewState} from "../../util/test/factory/createAppState"
 import {resetName} from "../../model/action/ResetNameAction"
 import {nameLoaded} from "../../model/action/NameLoadedAction"
+import {expect} from "chai"
 
 describe("view reducer", () => {
 
@@ -10,7 +11,7 @@ describe("view reducer", () => {
         it("updates the name", () => {
             const newState = viewReducer(createViewState(), nameLoaded({ name: "Joe"}))
 
-            expect(newState.name).toEqual("Joe")
+            expect(newState.name).to.equal("Joe")
         })
 
     })
@@ -24,7 +25,7 @@ describe("view reducer", () => {
 
             const newState = viewReducer(priorState, resetName({}))
 
-            expect(newState.name).toEqual("")
+            expect(newState.name).to.equal("")
         })
     })
 

@@ -9,7 +9,7 @@ export class AppPageObject {
     }
 
     public async load(timeout: number) {
-        const driver = await this.driver.get("http://localhost:3000/")
+        const driver = await this.driver.get("http://localhost:1234/")
         await pollUntilTrue(async () => await this.greeting().name() !== "", timeout)
         return driver
     }
