@@ -1,5 +1,0 @@
---recursive
---require ts-node/register
---require src/test-setup.ts
---watch-extensions ts
---reporter progress

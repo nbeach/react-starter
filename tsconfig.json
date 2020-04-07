@@ -23,6 +23,9 @@
     "noEmit": true,
     "jsx": "react"
   },
+  "files": [
+    "media-modules.d.ts"
+  ],
   "include": [
     "src"
   ]

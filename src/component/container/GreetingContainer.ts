@@ -1,5 +1,5 @@
 import {connect, MapDispatchToProps, MapStateToProps} from "react-redux"
-import {AppState} from "../../model/AppState"
+import {AppState} from "../../model/View"
 import {Greeting, GreetingDispatchProps, GreetingStateProps} from "../presentation/Greeting"
 import {resetName} from "../../model/action/ResetNameAction"
 

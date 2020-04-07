@@ -1,8 +1,8 @@
 import {By, WebDriver} from "selenium-webdriver"
-import {testHandleSelector} from "../../util/test/container-testing"
 import {GreetingPageObject} from "./GreetingPageObject"
 import {pollUntilTrue} from "./e2e-util"
 import {GreetingTestHandles} from "../../component/presentation/Greeting"
+import {testHandleSelector} from "../../util/test/container"
 
 export class AppPageObject {
     constructor(private driver: WebDriver) {

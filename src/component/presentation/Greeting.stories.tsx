@@ -7,5 +7,5 @@ const state: GreetingStateProps & GreetingDispatchProps = {
     nameReset: () => {},
 }
 
-storiesOf(Greeting.name, module)
+storiesOf("Greeting", module)
     .add("default", () => <Greeting {...state}/>)
