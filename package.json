@@ -1,7 +1,7 @@
 {
   "private": true,
   "scripts": {
-    "start": "parcel src/index.html",
+    "start": "node dev-server.js",
     "build": "parcel build src/index.html",
     "test": "mocha --watch",
     "test:once": "mocha",
@@ -25,12 +25,13 @@
       "./src/**/*.tsx"
     ],
     "require": [
-      "ts-node/register",
+      "./src/ts-node-register",
       "src/test-setup.ts"
     ]
   },
   "dependencies": {
     "moment": "^2.24.0",
+    "parcel-proxy-server": "^1.1.0",
     "ramda": "^0.27.0",
     "react": "^16.8.3",
     "react-dom": "^16.13.0",
