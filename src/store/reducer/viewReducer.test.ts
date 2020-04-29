@@ -1,9 +1,8 @@
 import {viewReducer} from "./viewReducer"
-import {resetName} from "../../model/action/ResetNameAction"
-import {nameLoaded} from "../../model/action/NameLoadedAction"
 import {expect} from "chai"
 import {viewStateDefaults} from "../../util/test/model-defaults"
 import {ViewState} from "../../model/View"
+import {nameLoaded, resetName} from "../../model/Action"
 
 describe("view reducer", () => {
 

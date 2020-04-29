@@ -6,7 +6,7 @@ export interface ActionFactory<T> {
     readonly type: string
 }
 
-export const createActionFactory = <T>(type: string): ActionFactory<T> => {
+export const createActionFactory = <T = {}>(type: string): ActionFactory<T> => {
     const factory = (parameters: T) => ({type, ...parameters})
     factory.type = type
     return factory

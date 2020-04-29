@@ -1,8 +1,8 @@
 import {loadNameSaga} from "./rootSaga"
 import {call, put} from "redux-saga/effects"
 import {retrieveName} from "../../repository/NameRepository"
-import {nameLoaded} from "../../model/action/NameLoadedAction"
 import {expect} from "chai"
+import {nameLoaded} from "../../model/Action"
 
 describe("rootSaga", () => {
     it("loadNameSaga", () => {

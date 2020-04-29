@@ -1,8 +1,7 @@
 import {Action} from "redux"
 import {ViewState} from "../../model/View"
 import {isAction} from "../../util/action-util"
-import {resetName} from "../../model/action/ResetNameAction"
-import {nameLoaded} from "../../model/action/NameLoadedAction"
+import {nameLoaded, resetName} from "../../model/Action"
 
 export const viewReducer = (priorState: ViewState, action: Action): ViewState => {
 

@@ -1,9 +1,9 @@
 import {all, call, put} from "redux-saga/effects"
-import {nameLoaded} from "../../model/action/NameLoadedAction"
 import {retrieveName} from "../../repository/NameRepository"
+import {nameLoaded} from "../../model/Action"
 
 
-export default function* rootSaga() {
+export function* rootSaga() {
     yield all([
         loadNameSaga(),
     ])

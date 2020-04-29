@@ -1,10 +1,10 @@
 import {trigger} from "dom-sim"
 import {GreetingContainer} from "./GreetingContainer"
 import {GreetingTestHandles} from "../presentation/Greeting"
-import {resetName} from "../../model/action/ResetNameAction"
 import {expect} from "chai"
 import {queryByTestHandle, renderComponentWithState} from "../../util/test/container"
 import {appStateDefaults} from "../../util/test/model-defaults"
+import {resetName} from "../../model/Action"
 
 describe("GreetingContainer", () => {
 

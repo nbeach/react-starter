@@ -29,6 +29,7 @@
     "no-method-signature": true,
     "no-namespace": false,
     "no-empty-interface": false,
-    "linebreak-style": [true,"LF"]
+    "linebreak-style": [true,"LF"],
+    "no-default-export": true
   }
 }
