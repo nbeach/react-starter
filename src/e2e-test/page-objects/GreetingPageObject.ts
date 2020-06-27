@@ -1,13 +1,11 @@
-import {By, WebElement} from "selenium-webdriver"
-import {GreetingTestHandles} from "../../component/presentation/Greeting"
-import {testHandleSelector} from "../../util/test/container"
+import {GreetingTestIds} from "../../component/presentation/Greeting"
+import {testIdSelector} from "../../util/test/container"
 
 export class GreetingPageObject {
-    constructor(private host: WebElement) {}
+    constructor(private host: any) {}
 
-    public async name(): Promise<string> {
-        const element = await this.host.findElement(By.css(testHandleSelector(GreetingTestHandles.Message)))
-        return element.getText()
+    public name() {
+        return this.host.get(testIdSelector(GreetingTestIds.Message))
     }
 }
 

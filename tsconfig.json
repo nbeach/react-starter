@@ -24,7 +24,8 @@
     "jsx": "react"
   },
   "files": [
-    "media-modules.d.ts"
+    "media-modules.d.ts",
+    "node_modules/cypress/types/cypress-global-vars.d.ts"
   ],
   "include": [
     "src"
