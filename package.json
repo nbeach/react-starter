@@ -11,7 +11,7 @@
     "lint:fix": "eslint src/**/*.{js,jsx} --fix",
     "storybook": "start-storybook -s ./public",
     "ci": "yarn test:once && yarn lint",
-    "ci:e2e": "yarn start & sleep 20 && yarn test:e2e:headless"
+    "ci:e2e": "yarn start & wait-on http://localhost:1234 && yarn test:e2e:headless"
   },
   "dependencies": {
     "core-js": "^3.6.5",
@@ -43,6 +43,7 @@
     "jest": "^26.1.0",
     "parcel-bundler": "^1.12.4",
     "parcel-proxy-server": "^1.1.0",
-    "redux-mock-store": "^1.5.3"
+    "redux-mock-store": "^1.5.3",
+    "wait-on": "^5.0.1"
   }
 }
