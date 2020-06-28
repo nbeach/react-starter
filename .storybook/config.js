@@ -8,7 +8,7 @@ addParameters({
 
 function loadStories() {
         function requireAll(r) { r.keys().forEach(r); }
-        requireAll(require.context("../src/component", true, /\.stories\.tsx$/));
+        requireAll(require.context("../src/component", true, /\.stories\.jsx$/));
 }
 
 configure(loadStories, module);

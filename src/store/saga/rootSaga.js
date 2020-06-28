@@ -1,6 +1,6 @@
 import {all, call, put} from "redux-saga/effects"
 import {retrieveName} from "../../repository/NameRepository"
-import {nameLoaded} from "../../model/Action"
+import {action, NAME_LOADED} from "../../model/Action";
 
 
 export function* rootSaga() {
@@ -11,5 +11,5 @@ export function* rootSaga() {
 
 export function* loadNameSaga() {
     const name = yield call(retrieveName)
-    yield put(nameLoaded({ name }))
+    yield put(action(NAME_LOADED, { name }))
 }

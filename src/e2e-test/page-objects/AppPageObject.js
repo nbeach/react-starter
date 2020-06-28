@@ -4,15 +4,15 @@ import {testIdSelector} from "../../util/test/container"
 
 export class AppPageObject {
 
-    public async load() {
+    load() {
         cy.visit("localhost:1234")
     }
 
-    public title() {
+    title() {
         return cy.title()
     }
 
-    public greeting() {
+    greeting() {
         return new GreetingPageObject(cy.get(testIdSelector(GreetingTestIds.Container)))
     }
 

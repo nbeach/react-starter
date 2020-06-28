@@ -1,16 +1,15 @@
 import configureStore from "redux-mock-store"
 import {Provider} from "react-redux"
 import React from "react"
-import {AppState} from "../../model/View"
 import {render} from '@testing-library/react'
 
-export const mockStateStore = (state: AppState) => configureStore()(state)
+export const mockStateStore = (state) => configureStore()(state)
 
-export const renderComponentWithState = (fragment: any, state: AppState) => {
+export const renderComponentWithState = (fragment, state) => {
     const mockStore = mockStateStore(state)
     const renderResult = render(<Provider store={mockStore}>{fragment}</Provider>)
 
     return { mockStore, renderResult }
 }
 
-export const testIdSelector = (handle: string): string => `[data-testid='${handle}']`
+export const testIdSelector = (handle) => `[data-testid='${handle}']`

@@ -3,68 +3,46 @@
   "scripts": {
     "start": "node dev-server.js",
     "build": "parcel build src/index.html",
-    "test": "mocha --watch",
-    "test:once": "mocha",
+    "test": "jest --watch",
+    "test:once": "jest",
     "test:e2e": "cypress open",
     "test:e2e:headless": "cypress run --headless",
-    "lint": "tslint --project .",
-    "lint:fix": "tslint --fix --project .",
-    "compile": "tsc --noEmit",
+    "lint": "eslint src/**/*.{js,jsx}",
+    "lint:fix": "eslint src/**/*.{js,jsx} --fix",
     "storybook": "start-storybook -s ./public",
-    "ci": "yarn compile && yarn test:once && yarn lint",
+    "ci": "yarn test:once && yarn lint",
     "ci:e2e": "yarn start & sleep 20 && yarn test:e2e:headless"
   },
-  "mocha": {
-    "extension": [
-      "ts",
-      "tsx"
-    ],
-    "reporter": "progress",
-    "spec": "./src/**/*.test.*",
-    "watch-files": [
-      "./src/**/*.ts",
-      "./src/**/*.tsx"
-    ],
-    "require": [
-      "./src/ts-node-register",
-      "src/test-setup.ts"
-    ]
-  },
   "dependencies": {
+    "core-js": "^3.6.5",
+    "prop-types": "^15.7.2",
     "ramda": "^0.27.0",
     "react": "^16.8.3",
     "react-dom": "^16.13.0",
     "react-redux": "^7.2.0",
-    "redux": "^4.0.5"
+    "redux": "^4.0.5",
+    "redux-saga": "^1.1.3",
+    "regenerator-runtime": "^0.13.5",
+    "sass": "^1.24.3"
   },
   "devDependencies": {
+    "@babel/core": "^7.10.3",
+    "@babel/preset-env": "^7.10.3",
+    "@babel/preset-react": "^7.10.1",
     "@storybook/react": "^5.3.17",
     "@testing-library/react": "^10.4.3",
-    "@types/chai": "^4.2.11",
-    "@types/jsdom": "^16.1.0",
-    "@types/lodash": "^4.14.149",
-    "@types/mocha": "^7.0.2",
-    "@types/ramda": "^0.26.44",
-    "@types/react": "^16.9.23",
-    "@types/react-dom": "^16.9.5",
-    "@types/react-redux": "^7.1.3",
-    "@types/redux-mock-store": "^1.0.0",
-    "@types/redux-saga": "^0.10.5",
-    "awesome-typescript-loader": "^5.2.1",
-    "babel-loader": "^8.0.6",
-    "chai": "^4.2.0",
     "cypress": "^4.9.0",
-    "jsdom": "^16.2.1",
-    "lodash": "^4.17.15",
-    "mocha": "^7.1.0",
+    "eslint": "^7.3.1",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-cypress": "^2.11.1",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-react": "^7.20.0",
+    "eslint-plugin-standard": "^4.0.1",
+    "jest": "^26.1.0",
     "parcel-bundler": "^1.12.4",
     "parcel-proxy-server": "^1.1.0",
-    "redux-mock-store": "^1.5.3",
-    "sass": "^1.24.3",
-    "sinon": "^7.4.1",
-    "ts-node": "^8.6.2",
-    "tslint": "^6.1.0",
-    "tslint-immutable": "^6.0.1",
-    "typescript": "^3.8.3"
+    "redux-mock-store": "^1.5.3"
   }
 }

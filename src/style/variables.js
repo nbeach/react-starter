@@ -1,4 +1,4 @@
 export const Style = {
-    color: {
-    },
+  color: {
+  }
 }

@@ -2,9 +2,11 @@ import {GreetingTestIds} from "../../component/presentation/Greeting"
 import {testIdSelector} from "../../util/test/container"
 
 export class GreetingPageObject {
-    constructor(private host: any) {}
+    constructor(host) {
+        this.host = host
+    }
 
-    public name() {
+    name() {
         return this.host.get(testIdSelector(GreetingTestIds.Message))
     }
 }

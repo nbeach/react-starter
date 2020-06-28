@@ -1,3 +1,3 @@
 export const retrieveName = () => {
-    return Promise.resolve("John")
+  return Promise.resolve('John')
 }
