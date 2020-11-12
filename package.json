@@ -10,8 +10,8 @@
     "lint:fix": "tslint --fix --project .",
     "compile": "tsc --noEmit",
     "storybook": "start-storybook -s ./public",
-    "ci": "yarn compile && yarn test:once && yarn lint",
-    "ci:e2e": "yarn start & sleep 20 && yarn test:e2e"
+    "ci-checks": "yarn compile && yarn test:once && yarn lint",
+    "ci-checks:e2e": "yarn start & wait-on 'http://localhost:1234' && yarn test:e2e && killall node"
   },
   "mocha": {
     "extension": [
@@ -54,7 +54,7 @@
     "awesome-typescript-loader": "^5.2.1",
     "babel-loader": "^8.0.6",
     "chai": "^4.2.0",
-    "chromedriver": "^80.0.2",
+    "chromedriver": "~86.0.0",
     "dom-sim": "^1.0.0",
     "jsdom": "^16.2.1",
     "lodash": "^4.17.15",
@@ -67,6 +67,7 @@
     "ts-node": "^8.6.2",
     "tslint": "^6.1.0",
     "tslint-immutable": "^6.0.1",
-    "typescript": "^3.8.3"
+    "typescript": "^3.8.3",
+    "wait-on": "^5.2.0"
   }
 }
