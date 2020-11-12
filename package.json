@@ -63,7 +63,6 @@
     "redux-mock-store": "^1.5.3",
     "sass": "^1.24.3",
     "selenium-webdriver": "^4.0.0-alpha.3",
-    "sinon": "^7.4.1",
     "ts-node": "^8.6.2",
     "tslint": "^6.1.0",
     "tslint-immutable": "^6.0.1",
