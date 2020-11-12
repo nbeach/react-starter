@@ -1,7 +1,7 @@
-export interface AppState {
+export type AppState = {
     readonly view: ViewState
-}
+};
 
-export interface ViewState  {
+export type ViewState  = {
     readonly name: string
-}
+};

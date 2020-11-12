@@ -1,12 +1,12 @@
 import React from "react"
 
-export interface GreetingStateProps {
+export type GreetingStateProps = {
     readonly name: string
-}
+};
 
-export interface GreetingDispatchProps {
+export type GreetingDispatchProps = {
     readonly nameReset: () => void
-}
+};
 
 export const Greeting = (props: GreetingStateProps & GreetingDispatchProps) => <div data-testid={GreetingTestId.Container}>
     <div onClick={() => props.nameReset()} data-testid={GreetingTestId.Message}>Hello {props.name}</div>

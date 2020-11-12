@@ -12,4 +12,5 @@ const server = new ParcelProxyServer({
     }
 });
 
+// eslint-disable-next-line no-console
 server.listen(port, () => console.log(`Dev server started on http://localhost:${port}`));

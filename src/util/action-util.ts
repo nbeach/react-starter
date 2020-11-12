@@ -1,13 +1,14 @@
 import {Action} from "redux"
 
-export interface ActionFactory<T> {
+export type ActionFactory<T> = {
     (parameters: T): Action & T
 
     readonly type: string
-}
+};
 
 export const createActionFactory = <T = {}>(type: string): ActionFactory<T> => {
     const factory = (parameters: T) => ({type, ...parameters})
+    // eslint-disable-next-line functional/immutable-data
     factory.type = type
     return factory
 }

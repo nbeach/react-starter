@@ -1,0 +1,46 @@
+{
+  "root": true,
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "parser": "@typescript-eslint/parser",
+  "plugins": [
+    "@typescript-eslint",
+    "functional"
+  ],
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:functional/external-recommended",
+    "plugin:functional/recommended"
+  ],
+  "overrides": [
+    {
+      "files": ["**/*"],
+      "rules": {
+        "@typescript-eslint/explicit-module-boundary-types": "off",
+        "@typescript-eslint/explicit-function-return-type": "off",
+        "@typescript-eslint/no-explicit-any": "off",
+        "@typescript-eslint/no-empty-function": "off",
+        "@typescript-eslint/ban-types": "off",
+        "functional/no-expression-statement": "off",
+        "functional/no-mixed-type": "off",
+        "functional/functional-parameters": "off",
+        "functional/no-conditional-statement": "off",
+        "functional/no-class": "off",
+        "functional/no-this-expression": "off",
+        "functional/no-let": "off",
+        "functional/no-return-void": "off",
+        "no-console": "error"
+      }
+    },
+    {
+      "files": ["**/*.js"],
+      "rules": {
+        "@typescript-eslint/no-var-requires": "off"
+      }
+    }
+  ]
+}

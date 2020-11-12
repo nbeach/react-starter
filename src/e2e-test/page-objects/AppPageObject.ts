@@ -1,10 +1,10 @@
 import {By, WebDriver} from "selenium-webdriver"
 import {GreetingPageObject} from "./GreetingPageObject"
 import {GreetingTestId} from "../../component/presentation/Greeting"
-import {testIdSelector} from "./testIdSelector"
+import {testIdSelector} from "./testIdSelector";
 
 export class AppPageObject {
-    constructor(private driver: WebDriver) {
+    constructor(private readonly driver: WebDriver) {
     }
 
     public async load(timeout: number) {
