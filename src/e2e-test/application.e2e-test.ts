@@ -6,12 +6,10 @@ import {expect} from "chai"
 
 const testTimoutPeriod = 2 * 60 * 1000
 
-describe("the app", function() {
+describe("the app", () => {
     let driver: WebDriver, application: AppPageObject
 
-    // @ts-ignore
-    before(async () => {
-        // @ts-ignore
+    before( async function() {
         this.timeout(testTimoutPeriod)
 
         driver = await new Builder()
@@ -22,7 +20,6 @@ describe("the app", function() {
         application = new AppPageObject(driver)
     })
 
-    // @ts-ignore
     after(async () => {
         await driver.quit()
     })

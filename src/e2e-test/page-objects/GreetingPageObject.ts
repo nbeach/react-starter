@@ -1,6 +1,6 @@
 import {By, WebElement} from "selenium-webdriver"
 import {GreetingTestId} from "../../component/presentation/Greeting"
-import {testIdSelector} from "../../util/test/container"
+import {testIdSelector} from "./testIdSelector"
 
 export class GreetingPageObject {
     constructor(private host: WebElement) {}

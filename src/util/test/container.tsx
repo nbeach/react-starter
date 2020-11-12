@@ -11,5 +11,3 @@ export const renderComponentWithState = (Component: any, state: AppState) => {
     render(<Provider store={mockStore}><Component/></Provider>)
     return mockStore
 }
-
-export const testIdSelector = (handle: string): string => `[data-testid='${handle}']`
