@@ -26,7 +26,7 @@
     ],
     "require": [
       "./src/ts-node-register",
-      "src/test-setup.ts"
+      "jsdom-global/register"
     ]
   },
   "dependencies": {
@@ -39,11 +39,9 @@
   },
   "devDependencies": {
     "@storybook/react": "5.3.21",
-    "@testing-library/react": "^11.1.2",
-    "@testing-library/user-event": "^12.2.2",
+    "@testing-library/react": "11.1.2",
+    "@testing-library/user-event": "12.2.2",
     "@types/chai": "4.2.14",
-    "@types/jsdom": "16.2.5",
-    "@types/lodash": "4.14.165",
     "@types/mocha": "8.0.4",
     "@types/ramda": "0.27.32",
     "@types/react": "16.9.56",
@@ -59,9 +57,9 @@
     "chai": "4.2.0",
     "chromedriver": "86.0.0",
     "eslint": "7.13.0",
-    "eslint-plugin-functional": "^3.1.0",
+    "eslint-plugin-functional": "3.1.0",
     "jsdom": "16.4.0",
-    "lodash": "4.17.20",
+    "jsdom-global": "3.0.2",
     "mocha": "8.2.1",
     "parcel-bundler": "1.12.4",
     "parcel-proxy-server": "1.1.0",
