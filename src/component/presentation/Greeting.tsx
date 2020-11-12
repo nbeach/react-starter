@@ -8,11 +8,11 @@ export interface GreetingDispatchProps {
     readonly nameReset: () => void
 }
 
-export const Greeting = (props: GreetingStateProps & GreetingDispatchProps) => <div data-test-handle={GreetingTestHandles.Container}>
-    <div onClick={() => props.nameReset()} data-test-handle={GreetingTestHandles.Message}>Hello {props.name}</div>
+export const Greeting = (props: GreetingStateProps & GreetingDispatchProps) => <div data-testid={GreetingTestId.Container}>
+    <div onClick={() => props.nameReset()} data-testid={GreetingTestId.Message}>Hello {props.name}</div>
 </div>
 
-export enum GreetingTestHandles {
+export enum GreetingTestId {
     Container = "GREETING_CONTAINER",
     Message = "GREETING_MESSAGE",
 }

@@ -1,8 +1,8 @@
 import {By, WebDriver} from "selenium-webdriver"
 import {GreetingPageObject} from "./GreetingPageObject"
 import {pollUntilTrue} from "./e2e-util"
-import {GreetingTestHandles} from "../../component/presentation/Greeting"
-import {testHandleSelector} from "../../util/test/container"
+import {GreetingTestId} from "../../component/presentation/Greeting"
+import {testIdSelector} from "../../util/test/container"
 
 export class AppPageObject {
     constructor(private driver: WebDriver) {
@@ -19,7 +19,7 @@ export class AppPageObject {
     }
 
     public greeting() {
-        return new GreetingPageObject(this.driver.findElement(By.css(testHandleSelector(GreetingTestHandles.Container))))
+        return new GreetingPageObject(this.driver.findElement(By.css(testIdSelector(GreetingTestId.Container))))
     }
 
 
