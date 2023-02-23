@@ -5,6 +5,9 @@
     "node": true
   },
   "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": ["./tsconfig.json"]
+  },
   "plugins": [
     "@typescript-eslint",
     "functional"
@@ -13,7 +16,7 @@
     "eslint:recommended",
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
-    "plugin:functional/external-recommended",
+    "plugin:functional/external-typescript-recommended",
     "plugin:functional/recommended"
   ],
   "overrides": [
@@ -25,9 +28,12 @@
         "@typescript-eslint/no-explicit-any": "off",
         "@typescript-eslint/no-empty-function": "off",
         "@typescript-eslint/ban-types": "off",
-        "functional/no-expression-statement": "off",
+        "functional/no-expression-statements": "off",
         "functional/no-mixed-type": "off",
+        "functional/no-mixed-types": "off",
         "functional/functional-parameters": "off",
+        "functional/prefer-immutable-types": "off",
+        "functional/no-classes": "off",
         "functional/no-conditional-statement": "off",
         "functional/no-class": "off",
         "functional/no-this-expression": "off",

@@ -10,6 +10,6 @@ export function* rootSaga() {
 }
 
 export function* loadNameSaga() {
-    const name = yield call(retrieveName)
+    const name: string = yield call(retrieveName)
     yield put(nameLoaded({ name }))
 }
