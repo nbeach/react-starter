@@ -13,3 +13,6 @@ export function* loadNameSaga() {
     const name: string = yield call(retrieveName)
     yield put(nameLoaded({ name }))
 }
+
+
+
