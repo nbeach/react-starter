@@ -1,13 +1,13 @@
 import {connect, MapDispatchToProps, MapStateToProps} from "react-redux"
 import {AppState} from "../../model/View"
-import {Greeting, GreetingDispatchProps, GreetingStateProps} from "../presentation/Greeting"
+import {Greeting, GreetingEvents, GreetingState} from "../presentation/Greeting"
 import {resetName} from "../../model/Action"
 
-export const mapStateToProps: MapStateToProps<GreetingStateProps, {}, AppState> = state => ({
+export const mapStateToProps: MapStateToProps<GreetingState, {}, AppState> = state => ({
     name: state.view.name,
 })
 
-export const mapDispatchToProps: MapDispatchToProps<GreetingDispatchProps, {}> = dispatch => ({
+export const mapDispatchToProps: MapDispatchToProps<GreetingEvents, {}> = dispatch => ({
     nameReset: () => dispatch(resetName({})),
 })
 

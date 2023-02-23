@@ -1,8 +1,8 @@
 import {storiesOf} from "@storybook/react"
 import React from "react"
-import {Greeting, GreetingDispatchProps, GreetingStateProps} from "./Greeting"
+import {Greeting, GreetingEvents, GreetingState} from "./Greeting"
 
-const state: GreetingStateProps & GreetingDispatchProps = {
+const state: GreetingState & GreetingEvents = {
     name: "John",
     nameReset: () => {},
 }

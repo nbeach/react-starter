@@ -1,15 +1,15 @@
 import React from "react"
 import styled from "styled-components";
 
-export type GreetingStateProps = {
+export type GreetingState = {
     readonly name: string
 };
 
-export type GreetingDispatchProps = {
+export type GreetingEvents = {
     readonly nameReset: () => void
 };
 
-export const Greeting = (props: GreetingStateProps & GreetingDispatchProps) => <div data-testid={GreetingTestId.Container}>
+export const Greeting = (props: GreetingState & GreetingEvents) => <div data-testid={GreetingTestId.Container}>
     <FancyHeader onClick={() => props.nameReset()} data-testid={GreetingTestId.Message}>Hello {props.name}</FancyHeader>
 </div>
 
