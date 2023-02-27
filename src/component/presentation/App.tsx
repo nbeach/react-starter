@@ -1,3 +1,6 @@
 import React from "react"
+import {ToDoListContainer} from "../container/ToDoListContainer";
 
-export const App = () => <></>
+export const App = () => <>
+    <ToDoListContainer/>
+</>

@@ -1,7 +1,7 @@
 import {ViewState} from "../../model/View"
 
 export const viewStateDefaults: ViewState = {
-    name: "",
+    todoItems: [],
 }
 
 export const appStateDefaults = {

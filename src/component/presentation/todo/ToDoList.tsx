@@ -9,7 +9,7 @@ export type ToDoListState = {
 export type ToDoListEvents = {
 };
 
-export const ToDoList = ({toDoItems}: ToDoListState & ToDoListEvents) => <ToDoListContainer data-testid={TodoListTestId.Container}>
+export const ToDoList = ({toDoItems}: ToDoListState & ToDoListEvents) => <ToDoListContainer data-testid={ToDoListTestId.Container}>
     { toDoItems.map(item => <ToDoItem item={item}/>) }
 </ToDoListContainer>
 
@@ -31,6 +31,6 @@ const ToDoItemContainer = styled.div({
     justifyContent: "center"
 })
 
-export enum TodoListTestId {
+export enum ToDoListTestId {
     Container = "TODO_LIST_CONTAINER",
 }

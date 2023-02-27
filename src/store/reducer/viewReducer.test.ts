@@ -1,33 +1,24 @@
 import {viewReducer} from "./viewReducer"
 import {expect} from "chai"
 import {viewStateDefaults} from "../../util/test/model-defaults"
-import {ViewState} from "../../model/View"
-import {nameLoaded, resetName} from "../../model/Action"
+import {toDoItemsLoaded} from "../../model/Action"
 
 describe("view reducer", () => {
 
-    describe("when nameLoaded action", () => {
+    describe("when todoItemsLoaded action", () => {
 
-        it("updates the name", () => {
-            const newState = viewReducer(viewStateDefaults, nameLoaded({ name: "Joe"}))
+        it("sets the todo items", () => {
+            const items = [
+                { id: "123", text: "Get groceries", highPriority: true }
+            ]
+            const newState = viewReducer(viewStateDefaults, toDoItemsLoaded({ items }))
 
-            expect(newState.name).to.equal("Joe")
+            expect(newState.todoItems).to.eql([
+                { id: 123, description: "Get groceries", important: true}
+            ])
         })
 
     })
 
-    describe("when resetName action", () => {
-
-        it("resets the name", () => {
-            const priorState: ViewState = {
-                ...viewStateDefaults,
-                name: "John",
-            }
-
-            const newState = viewReducer(priorState, resetName({}))
-
-            expect(newState.name).to.equal("")
-        })
-    })
 
 })

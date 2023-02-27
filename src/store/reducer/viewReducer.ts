@@ -1,21 +1,18 @@
 import {Action} from "redux"
 import {ViewState} from "../../model/View"
 import {isAction} from "../../util/action-util"
-import {nameLoaded, resetName} from "../../model/Action"
+import {toDoItemsLoaded} from "../../model/Action"
 
 export const viewReducer = (priorState: ViewState, action: Action): ViewState => {
 
-    if (isAction(nameLoaded, action)) {
+    if (isAction(toDoItemsLoaded, action)) {
         return {
             ...priorState,
-            name: action.name,
-        }
-    }
-
-    if (isAction(resetName, action)) {
-        return {
-            ...priorState,
-            name: "",
+            todoItems: action.items.map(item => ({
+                id: Number(item.id),
+                description: item.text,
+                important: item.highPriority
+            }))
         }
     }
 

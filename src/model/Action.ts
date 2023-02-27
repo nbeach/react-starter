@@ -1,4 +1,4 @@
 import {createActionFactory} from "../util/action-util"
+import {ToDoItem} from "./Domain";
 
-export const nameLoaded = createActionFactory<{ readonly name: string }>("NAME_LOADED")
-export const resetName = createActionFactory("RESET_NAME")
+export const toDoItemsLoaded = createActionFactory<{ readonly items: ReadonlyArray<ToDoItem>}>("TODO_ITEMS_LOADED")

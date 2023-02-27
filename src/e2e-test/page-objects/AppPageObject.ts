@@ -1,7 +1,7 @@
 import {By, WebDriver} from "selenium-webdriver"
-import {GreetingPageObject} from "./GreetingPageObject"
-import {GreetingTestId} from "../../component/presentation/Greeting"
+import {ToDoListPageObject} from "./ToDoListPageObject"
 import {testIdSelector} from "./testIdSelector";
+import {ToDoListTestId} from "../../component/presentation/todo/ToDoList";
 
 export class AppPageObject {
     constructor(private readonly driver: WebDriver) {
@@ -9,7 +9,7 @@ export class AppPageObject {
 
     public async load(timeout: number) {
         const driver = await this.driver.get("http://localhost:1234/")
-        await this.driver.wait(async () => await this.greeting().name() !== "", timeout)
+        await this.driver.wait(async () => (await this.toDoList().items()).length > 0, timeout)
         return driver
     }
 
@@ -17,8 +17,8 @@ export class AppPageObject {
         return this.driver.getTitle()
     }
 
-    public greeting() {
-        return new GreetingPageObject(this.driver.findElement(By.css(testIdSelector(GreetingTestId.Container))))
+    public toDoList() {
+        return new ToDoListPageObject(this.driver.findElement(By.css(testIdSelector(ToDoListTestId.Container))))
     }
 
 }

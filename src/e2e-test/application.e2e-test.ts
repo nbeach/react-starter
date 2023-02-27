@@ -30,7 +30,7 @@ describe("the app", () => {
     })
 
     it("displays a greeting", async () => {
-        expect(await application.greeting().name()).to.eql("Hello John")
+        expect(await application.toDoList().items()).to.eql("Hello John")
     })
 
 })

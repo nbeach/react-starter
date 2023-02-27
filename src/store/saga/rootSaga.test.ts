@@ -1,17 +1,19 @@
-import {loadNameSaga} from "./rootSaga"
+import {loadToDoItemsSaga} from "./rootSaga"
 import {call, put} from "redux-saga/effects"
-import {retrieveName} from "../../repository/NameRepository"
+import {retrieveToDoItems} from "../../repository/ToDoItemRepository"
 import {expect} from "chai"
-import {nameLoaded} from "../../model/Action"
+import {toDoItemsLoaded} from "../../model/Action"
 
 describe("rootSaga", () => {
-    it("loadNameSaga", () => {
-        const saga = loadNameSaga()
+    it("loadToDoItemsSaga", () => {
+        const saga = loadToDoItemsSaga()
 
-        const name = "Jim"
+        const items = [
+            { id: "123", text: "Get groceries", highPriority: true }
+        ]
 
-        expect(saga.next().value).to.eql(call(retrieveName))
-        expect(saga.next(name).value).to.eql(put(nameLoaded({ name })))
+        expect(saga.next().value).to.eql(call(retrieveToDoItems))
+        expect(saga.next(items).value).to.eql(put(toDoItemsLoaded({ items })))
         expect(saga.next().done).to.eql(true)
     })
 })
