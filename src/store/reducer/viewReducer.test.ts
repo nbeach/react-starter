@@ -1,9 +1,9 @@
 import {viewReducer} from "./viewReducer"
 import {expect} from "chai"
-import {viewStateDefaults} from "../../util/test/model-defaults"
-import {toDoItemsLoaded, toggleToDoItemImportantRequested} from "../../model/Action"
+import {viewStateDefaults} from "../../util/test/modelDefaults"
+import {toDoItemsLoaded, toggleToDoItemImportantRequested} from "../../model/action"
 import {describe} from "mocha";
-import {ViewState} from "../../model/View";
+import {ViewState} from "../../model/view";
 
 describe("view reducer", () => {
 

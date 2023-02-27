@@ -1,8 +1,8 @@
 import {loadToDoItemsSaga} from "./rootSaga"
 import {call, put} from "redux-saga/effects"
-import {retrieveToDoItems} from "../../service/ToDoItemService"
+import {retrieveToDoItems} from "../../service/toDoItemService"
 import {expect} from "chai"
-import {toDoItemsLoaded} from "../../model/Action"
+import {toDoItemsLoaded} from "../../model/action"
 
 describe("rootSaga", () => {
     it("loadToDoItemsSaga", () => {

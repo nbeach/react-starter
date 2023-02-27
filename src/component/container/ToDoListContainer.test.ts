@@ -1,11 +1,11 @@
 import {ToDoListContainer} from "./ToDoListContainer"
 import {renderComponentWithState} from "../../util/test/render";
-import {appStateDefaults} from "../../util/test/model-defaults";
+import {appStateDefaults} from "../../util/test/modelDefaults";
 import {screen, userEvent} from "@storybook/testing-library";
 import {expect} from "chai";
-import {ToDoItemTestId} from "../presentation/todo/ToDoList";
-import {AppState} from "../../model/View";
-import {toggleToDoItemImportantRequested} from "../../model/Action";
+import {ToDoItemTestId} from "../presentation/toDoList/ToDoList";
+import {AppState} from "../../model/view";
+import {toggleToDoItemImportantRequested} from "../../model/action";
 
 describe("ToDoListContainer", () => {
 

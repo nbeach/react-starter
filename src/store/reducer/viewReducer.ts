@@ -1,7 +1,7 @@
 import {Action} from "redux"
-import {ViewState} from "../../model/View"
-import {isAction} from "../../util/action-util"
-import {toDoItemsLoaded, toggleToDoItemImportantRequested} from "../../model/Action"
+import {ViewState} from "../../model/view"
+import {isAction} from "../../util/actionUtil"
+import {toDoItemsLoaded, toggleToDoItemImportantRequested} from "../../model/action"
 
 export const viewReducer = (priorState: ViewState, action: Action): ViewState => {
 

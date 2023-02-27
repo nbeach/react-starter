@@ -1,4 +1,4 @@
-import {ToDoItem} from "../model/Domain";
+import {ToDoItem} from "../model/domain";
 
 export const retrieveToDoItems = (): Promise<ReadonlyArray<ToDoItem>> => {
     return Promise.resolve( [

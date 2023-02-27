@@ -1,4 +1,4 @@
-import {AppState} from "../../model/View";
+import {AppState} from "../../model/view";
 import {render} from "@testing-library/react";
 import React from "react";
 import {mockStateStore} from "./state";

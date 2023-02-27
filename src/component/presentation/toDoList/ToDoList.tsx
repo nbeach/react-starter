@@ -1,5 +1,5 @@
 import React from "react"
-import {ToDoItemView} from "../../../model/View";
+import {ToDoItemView} from "../../../model/view";
 import styled from "styled-components";
 
 export type ToDoListState = {

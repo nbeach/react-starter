@@ -1,7 +1,7 @@
 import {all, call, put} from "redux-saga/effects"
-import {retrieveToDoItems} from "../../service/ToDoItemService"
-import {toDoItemsLoaded} from "../../model/Action"
-import {ToDoItem} from "../../model/Domain";
+import {retrieveToDoItems} from "../../service/toDoItemService"
+import {toDoItemsLoaded} from "../../model/action"
+import {ToDoItem} from "../../model/domain";
 
 
 export function* rootSaga() {

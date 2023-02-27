@@ -1,4 +1,4 @@
-import {AppState} from "../model/View"
+import {AppState} from "../model/view"
 
 export const STORY_STATE: AppState = {
     view: {

@@ -1,4 +1,4 @@
-import {ViewState} from "../../model/View"
+import {ViewState} from "../../model/view"
 
 export const viewStateDefaults: ViewState = {
     toDoItems: [],
