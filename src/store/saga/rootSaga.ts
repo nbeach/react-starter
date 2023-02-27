@@ -1,5 +1,5 @@
 import {all, call, put} from "redux-saga/effects"
-import {retrieveToDoItems} from "../../repository/ToDoItemRepository"
+import {retrieveToDoItems} from "../../service/ToDoItemService"
 import {toDoItemsLoaded} from "../../model/Action"
 import {ToDoItem} from "../../model/Domain";
 

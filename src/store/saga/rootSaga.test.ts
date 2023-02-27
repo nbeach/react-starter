@@ -1,6 +1,6 @@
 import {loadToDoItemsSaga} from "./rootSaga"
 import {call, put} from "redux-saga/effects"
-import {retrieveToDoItems} from "../../repository/ToDoItemRepository"
+import {retrieveToDoItems} from "../../service/ToDoItemService"
 import {expect} from "chai"
 import {toDoItemsLoaded} from "../../model/Action"
 
