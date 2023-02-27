@@ -1,14 +1,14 @@
 import {Action} from "redux"
 import {ViewState} from "../../model/View"
 import {isAction} from "../../util/action-util"
-import {toDoItemsLoaded} from "../../model/Action"
+import {toDoItemsLoaded, toggleToDoItemImportantRequested} from "../../model/Action"
 
 export const viewReducer = (priorState: ViewState, action: Action): ViewState => {
 
     if (isAction(toDoItemsLoaded, action)) {
         return {
             ...priorState,
-            todoItems: action.items.map(item => ({
+            toDoItems: action.items.map(item => ({
                 id: Number(item.id),
                 description: item.text,
                 important: item.highPriority
@@ -16,5 +16,22 @@ export const viewReducer = (priorState: ViewState, action: Action): ViewState =>
         }
     }
 
+    if (isAction(toggleToDoItemImportantRequested, action)) {
+        return {
+            ...priorState,
+            toDoItems: priorState.toDoItems.map(
+                doWhere(
+                    item => item.id === action.id,
+                        item => ({ ...item, important: !item.important})
+                )
+            )
+        }
+    }
+
     return priorState
+}
+
+
+const doWhere = <T, R>(condition: (element: T) => boolean, action: (element: T) => R) => {
+    return (element: T) => condition(element) ? action(element) : element
 }

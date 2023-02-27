@@ -7,10 +7,11 @@ export type ToDoListState = {
 };
 
 export type ToDoListEvents = {
+    readonly markItemImportantClicked: (id: number) => void
 };
 
-export const ToDoList = ({toDoItems}: ToDoListState & ToDoListEvents) => <ToDoListContainer data-testid={ToDoListTestId.Container}>
-    { toDoItems.map(item => <ToDoItem item={item}/>) }
+export const ToDoList = ({toDoItems, markItemImportantClicked}: ToDoListState & ToDoListEvents) => <ToDoListContainer data-testid={ToDoListTestId.Container}>
+    { toDoItems.map(item => <ToDoItem item={item} markImportantClicked={markItemImportantClicked}/>) }
 </ToDoListContainer>
 
 
@@ -21,9 +22,13 @@ const ToDoListContainer = styled.div({
     justifyContent: "center"
 })
 
-const ToDoItem = ({item}: { item: ToDoItemView}) => <ToDoItemContainer>
-    <div>{item.description}</div> {item.important ? <div>!</div> : ""}
-</ToDoItemContainer>
+const ToDoItem = ({item, markImportantClicked}: { item: ToDoItemView, markImportantClicked: (id: number) => void }) =>
+    <ToDoItemContainer data-testid={ToDoItemTestId.Container}>
+        <div onClick={() => markImportantClicked(item.id)} data-testid={ToDoItemTestId.Description}>
+            {item.description}
+        </div>
+        {item.important ? <div>!</div> : ""}
+    </ToDoItemContainer>
 
 const ToDoItemContainer = styled.div({
     display: "flex",
@@ -33,4 +38,9 @@ const ToDoItemContainer = styled.div({
 
 export enum ToDoListTestId {
     Container = "TODO_LIST_CONTAINER",
+}
+
+export enum ToDoItemTestId {
+    Container = "TODO_ITEM_CONTAINER",
+    Description = "TODO_ITEM_DESCRIPTION",
 }

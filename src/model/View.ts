@@ -3,7 +3,7 @@ export type AppState = {
 };
 
 export type ViewState  = {
-    readonly todoItems: ReadonlyArray<ToDoItemView>
+    readonly toDoItems: ReadonlyArray<ToDoItemView>
 };
 
 export type ToDoItemView = {
