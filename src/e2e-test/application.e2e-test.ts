@@ -29,8 +29,8 @@ describe("the app", () => {
         expect(await application.title()).to.eql("Example App")
     })
 
-    it("displays a greeting", async () => {
-        expect(await application.toDoList().items()).to.eql("Hello John")
+    it("displays a todo item", async () => {
+        expect(await (await application.toDoList().items())[0].description()).to.eql("Get groceries")
     })
 
 })

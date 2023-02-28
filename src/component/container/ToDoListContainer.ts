@@ -1,6 +1,6 @@
 import {connect, MapDispatchToProps, MapStateToProps} from "react-redux"
 import {AppState} from "../../model/view"
-import {ToDoList, ToDoListEvents, ToDoListState} from "../presentation/toDoList/ToDoList";
+import {ToDoList, ToDoListEvents, ToDoListState} from "../presentation/ToDoList/ToDoList";
 import {toggleToDoItemImportantRequested} from "../../model/action";
 
 export const mapStateToProps: MapStateToProps<ToDoListState, {}, AppState> = state => ({

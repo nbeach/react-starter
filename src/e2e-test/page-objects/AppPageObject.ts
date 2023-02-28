@@ -1,7 +1,7 @@
 import {By, WebDriver} from "selenium-webdriver"
 import {ToDoListPageObject} from "./ToDoListPageObject"
 import {testIdSelector} from "./testIdSelector";
-import {ToDoListTestId} from "../../component/presentation/toDoList/ToDoList";
+import {ToDoListTestId} from "../../component/presentation/ToDoList/ToDoList";
 
 export class AppPageObject {
     constructor(private readonly driver: WebDriver) {
